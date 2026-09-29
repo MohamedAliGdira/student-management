@@ -47,16 +47,16 @@ void getAllStudents_sansEtudiant_retourneListeVide() {
     assertTrue(result.isEmpty());
 }
 
-    @Test
-    void getAllStudents_retourneLaListeDuRepository() {
-        when(studentRepository.findAll()).thenReturn(List.of(student));
+   @Test
+void getAllStudents_retourneLaListeDuRepository() {
+    when(studentRepository.findAll()).thenReturn(List.of(student));
 
-        List<Student> result = studentService.getAllStudents();
+    List<Student> result = studentService.getAllStudents();
 
-        assertEquals(1, result.size());
-        assertEquals("Amira", result.get(0).getFirstName());
-        verify(studentRepository, times(1)).findAll();
-    }
+    assertEquals(2, result.size()); // was 1 — now intentionally wrong
+    assertEquals("Amira", result.get(0).getFirstName());
+    verify(studentRepository, times(1)).findAll();
+}
 
     @Test
     void getStudentById_existant_retourneLEtudiant() {
