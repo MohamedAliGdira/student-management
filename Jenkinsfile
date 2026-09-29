@@ -12,10 +12,9 @@ pipeline {
 
     stages {
         stage('Commit') {
-    steps {
-        sh 'git log -1 --pretty=format:"%h %an %s"'
-    }
-}
+            steps {
+                sh 'git log -1 --pretty=format:"%h %an %s"'
+            }
         }
 
         stage('Build') {
