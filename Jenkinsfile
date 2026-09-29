@@ -12,10 +12,10 @@ pipeline {
 
     stages {
         stage('Commit') {
-            steps {
-                git branch: 'main', url: 'https://github.com/MohamedAliGdira/student-management.git'
-                sh 'git log -1 --pretty=format:"%h %an %s"'
-            }
+    steps {
+        sh 'git log -1 --pretty=format:"%h %an %s"'
+    }
+}
         }
 
         stage('Build') {
