@@ -41,7 +41,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh "sudo docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest ."
+                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_NAME}:latest ."
             }
         }
 
